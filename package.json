@@ -1,0 +1,20 @@
+{
+  "name": "techichamps-web",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Techi Champs — creative digital agency website. Bold neo-brutalist design with live WebGL 3D.",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "gsap": "^3.13.0",
+    "lenis": "^1.1.20",
+    "three": "^0.169.0"
+  },
+  "devDependencies": {
+    "vite": "^5.4.10"
+  }
+}
