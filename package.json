@@ -6,7 +6,7 @@
   "description": "Techi Champs — creative digital agency website. Bold neo-brutalist design with live WebGL 3D.",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build && node scripts/prerender.mjs",
     "preview": "vite preview"
   },
   "dependencies": {

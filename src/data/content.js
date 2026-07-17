@@ -183,3 +183,29 @@ export const socials = [
   { label: 'Facebook', short: 'Fb', href: 'https://www.facebook.com/profile.php?id=100091271492822' },
   { label: 'Trustpilot', short: 'Tp', href: 'https://www.trustpilot.com/review/techichamps.com' },
 ]
+
+// ── legal pages (sensible defaults — edit the copy to match your policy)
+export const legalUpdated = 'July 2026'
+
+export const privacyPolicy = [
+  { h: 'Overview', p: 'Techi Champs ("we", "us") respects your privacy. This policy explains what information we collect through this website, how we use it, and the choices you have. By using the site you agree to this policy.' },
+  { h: 'Information we collect', p: 'We only collect what you give us. When you contact us or start a project, we may collect your name, email address, and any details you share about your project. We also collect basic, anonymous analytics (pages visited, device type) — only if you accept cookies.' },
+  { h: 'How we use it', p: 'To reply to your enquiry, deliver and improve our services, and — with your consent — understand how the site is used so we can make it better. We never sell your data.' },
+  { h: 'Cookies & analytics', p: 'The site uses minimal essential cookies to function. Analytics cookies only load after you click "Accept" on the cookie banner. You can decline at any time and the site still works.' },
+  { h: 'The Champ AI assistant', p: 'Messages you send to our on-site assistant "Champ" are processed to generate a reply and are not used to identify you. Please do not share sensitive personal or payment information in the chat.' },
+  { h: 'Data sharing', p: 'We share data only with trusted service providers who help us run the site and communicate with you (e.g. hosting and analytics), and only as needed. We may disclose information if required by law.' },
+  { h: 'Your rights', p: 'You can ask us to access, correct, or delete the personal information we hold about you. Email info@techichamps.com and we will respond promptly.' },
+  { h: 'Contact', p: 'Questions about this policy? Email info@techichamps.com.' },
+]
+
+export const termsOfService = [
+  { h: 'Agreement', p: 'These terms govern your use of the Techi Champs website. By accessing the site you agree to them. If you do not agree, please do not use the site.' },
+  { h: 'Our services', p: 'Techi Champs provides design, development, branding, marketing, and AI services. Specific project scope, timelines, deliverables, and pricing are agreed separately in a written proposal or contract before work begins.' },
+  { h: 'Intellectual property', p: 'The content, design, and code of this website are owned by Techi Champs. For client projects, ownership of final deliverables transfers to the client on full payment, as set out in the project agreement.' },
+  { h: 'Acceptable use', p: 'You agree not to misuse the site — no attempts to break, overload, or gain unauthorised access to it, and no unlawful or harmful activity.' },
+  { h: 'Quotes & pricing', p: 'Any budget ranges shown on the site are indicative only and do not constitute a binding quote. A formal quote is provided after a consultation.' },
+  { h: 'Third-party links', p: 'The site may link to third-party sites and services. We are not responsible for their content or practices.' },
+  { h: 'Limitation of liability', p: 'The site is provided "as is". To the extent permitted by law, Techi Champs is not liable for any indirect or consequential loss arising from use of the site.' },
+  { h: 'Changes', p: 'We may update these terms from time to time. Continued use of the site means you accept the current version.' },
+  { h: 'Contact', p: 'Questions about these terms? Email info@techichamps.com.' },
+]

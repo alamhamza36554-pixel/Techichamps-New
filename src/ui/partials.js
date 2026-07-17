@@ -106,7 +106,11 @@ export function footer() {
       </div>
       <div class="footer__bar">
         <span>© 2026 Techi Champs. All rights reserved.</span>
-        <span>Ideas · Design · Impact</span>
+        <span class="footer__legal">
+          <a href="privacy.html" data-cursor>Privacy</a> ·
+          <a href="terms.html" data-cursor>Terms</a> ·
+          Ideas · Design · Impact
+        </span>
       </div>
     </div>
   </footer>`

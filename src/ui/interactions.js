@@ -292,6 +292,40 @@ export function initBuild() {
   window.addEventListener('resize', apply)
 }
 
+/* ── contact form: client-side validation + mailto compose (no backend) ── */
+export function initContactForm() {
+  const form = document.querySelector('[data-contact-form]')
+  if (!form) return
+  const note = form.querySelector('[data-contact-note]')
+  const emailOk = (v) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)
+  const setErr = (name, msg) => {
+    const err = form.querySelector(`[data-err="${name}"]`)
+    if (err) err.textContent = msg || ''
+    const field = form.querySelector(`[name="${name}"]`)
+    if (field) field.classList.toggle('is-err', !!msg)
+  }
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault()
+    const d = Object.fromEntries(new FormData(form).entries())
+    let ok = true
+    if (!String(d.name || '').trim()) { setErr('name', 'Please enter your name.'); ok = false } else setErr('name')
+    if (!emailOk(String(d.email || '').trim())) { setErr('email', 'Enter a valid email address.'); ok = false } else setErr('email')
+    if (String(d.message || '').trim().length < 10) { setErr('message', 'A little more detail, please (10+ characters).'); ok = false } else setErr('message')
+
+    if (!ok) {
+      if (note) { note.textContent = 'Please fix the highlighted fields.'; note.className = 'cform__note is-err' }
+      return
+    }
+
+    const subject = `New project enquiry — ${d.name}`
+    const body = `Name: ${d.name}\nEmail: ${d.email}\nService: ${d.service || '—'}\nBudget: ${d.budget || '—'}\n\n${d.message}`
+    if (note) { note.textContent = "Opening your email app — thanks! We'll reply within a day."; note.className = 'cform__note is-ok' }
+    window.location.href = `mailto:info@techichamps.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
+    form.reset()
+  })
+}
+
 /* ── custom cursor with lag ring ── */
 export function initCursor() {
   const cur = document.querySelector('.cursor')

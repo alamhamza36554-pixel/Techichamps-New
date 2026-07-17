@@ -247,6 +247,71 @@ export function ctaBlock() {
   </section>`
 }
 
+/* ── CONTACT FORM (real form, client-side validated) ── */
+export function contactForm() {
+  const svc = services.map((s) => `<option value="${s.title}">${s.title}</option>`).join('')
+  const bud = budgets.map((b) => `<option value="${b}">${b}</option>`).join('')
+  return `
+  <section class="section" id="contact-form">
+    <div class="wrap">
+      <div class="section__head">
+        <div>
+          <span class="section__num" data-reveal>Start here</span>
+          <h2 class="section__title" data-reveal style="margin-top:16px">Tell us about your <em>project</em>.</h2>
+        </div>
+        <p style="max-width:34ch;font-size:.9rem" data-reveal>Fill this in and we'll reply within one business day. Prefer email? <a href="mailto:${brand.email}" style="border-bottom:2px solid var(--coral)" data-cursor>${brand.email}</a></p>
+      </div>
+      <form class="cform" data-contact-form novalidate data-reveal>
+        <div class="cform__row">
+          <label class="cform__field">
+            <span>Name *</span>
+            <input name="name" type="text" required autocomplete="name" placeholder="Your name" />
+            <em class="cform__err" data-err="name"></em>
+          </label>
+          <label class="cform__field">
+            <span>Email *</span>
+            <input name="email" type="email" required autocomplete="email" placeholder="you@company.com" />
+            <em class="cform__err" data-err="email"></em>
+          </label>
+        </div>
+        <div class="cform__row">
+          <label class="cform__field">
+            <span>Service</span>
+            <select name="service"><option value="">Not sure yet</option>${svc}</select>
+          </label>
+          <label class="cform__field">
+            <span>Budget</span>
+            <select name="budget"><option value="">Let's discuss</option>${bud}</select>
+          </label>
+        </div>
+        <label class="cform__field">
+          <span>Project details *</span>
+          <textarea name="message" rows="5" required placeholder="A few lines about what you need…"></textarea>
+          <em class="cform__err" data-err="message"></em>
+        </label>
+        <div class="cform__actions">
+          <button type="submit" class="btn" data-cursor>Send message ${arrow}</button>
+          <span class="cform__note" data-contact-note aria-live="polite"></span>
+        </div>
+      </form>
+    </div>
+  </section>`
+}
+
+/* ── LEGAL page body (privacy / terms) ── */
+export function legalBlock(sections, updated) {
+  const rows = sections
+    .map((s) => `<div class="legal__item" data-reveal><h2>${s.h}</h2><p>${s.p}</p></div>`)
+    .join('')
+  return `
+  <section class="section">
+    <div class="wrap legal">
+      <p class="legal__meta" data-reveal>Last updated: ${updated}</p>
+      ${rows}
+    </div>
+  </section>`
+}
+
 /* ── compact preview strip for the home page (links to full pages) ── */
 export function homeIntro() {
   return `
