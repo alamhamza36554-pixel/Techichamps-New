@@ -7,6 +7,7 @@ import {
   initTilt, initCursor, initNav, initDevice, initBuild,
 } from './interactions.js'
 import { initChamp } from './champ.js'
+import { initConsent } from './consent.js'
 
 // when the page is embedded (e.g. inside the hero browser preview) we drop
 // the custom cursor + smooth-scroll so it behaves like a normal iframe
@@ -25,6 +26,7 @@ export function bootPage(html) {
     initSmoothScroll()
     initDevice()
     initChamp()
+    initConsent()
   }
 
   // measure-dependent bits after first paint
